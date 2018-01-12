@@ -28,7 +28,8 @@ app.get("/url/*", function (req, res) {
             }
           )
         } else {
-          collection.insert({url: req.params[0], shortened: "", _id: count++})          
+          count++;
+          collection.insert({url: req.params[0], shortened: "", _id: count})          
           collection.find({url: req.params[0]}).toArray(function(err, data){
             if (err) throw err
             shortened = "https://usms.glitch.me/"+module(data[0]._id)
