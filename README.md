@@ -2,7 +2,7 @@ URL Shortener Microservice
 =========
 Instructions:
 -----------
- - Use "https://usms.glitch.me/url/" + your link to be shortened to get new link.
+ - Use https://usms.glitch.me/url/ + your link to be shortened to get new link.
  - Do not omit "HTTP://" or "HTTPS://"
  - Omitting will give you an error
 
