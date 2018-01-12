@@ -13,4 +13,4 @@ https://usms.glitch.me/url/ + https://google.com &rArr; *[https://usms.glitch.me
 
 Example Output:
 ---------
-    {"Orginal": "https://google.com", "Shortened": "https://usms.glitch.me/if"}
+    {"Orginal": "https://google.com", "Shortened": "https://usms.glitch.me/2"}
