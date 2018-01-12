@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>URL Shortener Microservice</title>
+    <meta name="description" content="URL Shortener Microservice">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" 
+          integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" 
+          crossorigin="anonymous">
+   <link rel="icon" 
+      type="image/ico" 
+      href="https://cdn.glitch.com/3a983ed3-bbc0-4c2b-9fb9-da564006b400%2Flink.ico?1515708712754">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body class="container">
+    <header>
+      <h1 class="text-center">
+      URL Shortener Microservice
+      </h1>
+    </header>
+    
+    <main>
+      <h4>Instructions:</h4>
+      <ul>
+        <li>Use "https://usms.glitch.me/url/" + your link to be shortened to get new link.</li>
+        <li>Do not omit "HTTP://" or "HTTPS://"</li>
+        <li>Omitting will give you an error</li>
+      </ul>
+      <h4>Example Input:</h4>
+      <ol>
+        <p>https://usms.glitch.me/url/ + https://google.com    &rArr;<code><a href="https://usms.glitch.me/url/https://google.com">    https://usms.glitch.me/url/https://google.com</a></code></p>
+      </ol>
+      <h4>Example Output:</h4>
+      <ol>
+        <code>
+          {
+            "Orginal": "https://google.com",
+            "Shortened": "https://usms.glitch.me/if"
+          }
+        </code>
+      </ol>
+    </main>
+
+    <footer></footer>
+
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"
+            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" 
+            integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" 
+            crossorigin="anonymous"></script>
+    <script src="/client.js"></script>
+
+  </body>
+</html>
