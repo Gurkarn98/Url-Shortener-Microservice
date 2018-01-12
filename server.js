@@ -3,7 +3,6 @@ var app = express();
 var validUrl = require('valid-url');
 var mongodb = require('mongodb').MongoClient;
 var module = require("./encode.js")
-var count = 1000;
 app.use(express.static('public'));
 
 app.get("/", function (req, res) {
@@ -28,18 +27,19 @@ app.get("/url/*", function (req, res) {
             }
           )
         } else {
-          count++;
-          collection.insert({url: req.params[0], shortened: "", _id: count})          
-          collection.find({url: req.params[0]}).toArray(function(err, data){
-            if (err) throw err
-            shortened = "https://usms.glitch.me/"+module(data[0]._id)
-            collection.update({url : req.params[0]}, {url : req.params[0], shortened : shortened})
-            res.json(
-              {
-                Orginal : req.params[0],
-                Shortened : shortened,
-              }
-            )
+          collection.count({}, function(err, count){
+            collection.insert({url: req.params[0], shortened: "", _id: count})          
+            collection.find({url: req.params[0]}).toArray(function(err, data){
+              if (err) throw err
+              shortened = "https://usms.glitch.me/"+module(data[0]._id)
+              collection.update({url : req.params[0]}, {url : req.params[0], shortened : shortened})
+              res.json(
+                {
+                  Orginal : req.params[0],
+                  Shortened : shortened,
+                }
+              )
+            })
           })
         }
       })
