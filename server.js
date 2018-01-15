@@ -60,7 +60,7 @@ app.get("/*", function (req, res) {
   } else {
     mongodb.connect(process.env.MONGODB, function (err, client){
       if (err) {console.log(err)}
-        var db = client.db("short-urls")
+        var db = client.db("fcc-database")
         var collection = db.collection("shortened-urls")
         console.log("https://usms.glitch.me"+req.url)
         collection.find({shortened: "https://usms.glitch.me"+req.url}).toArray(function(err, data){
