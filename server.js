@@ -14,7 +14,7 @@ app.get("/url/*", function (req, res) {
     var shortened = undefined;
     mongodb.connect(process.env.MONGODB, function (err, client){
       if (err) {console.log(err)}
-      var db = client.db("short-urls")
+      var db = client.db("fcc-database")
       var collection = db.collection("shortened-urls")
       collection.find({url: req.params[0]}).toArray(function(err, data){
         if (err) throw err
