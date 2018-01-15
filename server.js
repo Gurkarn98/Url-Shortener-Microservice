@@ -71,7 +71,7 @@ app.get("/*", function (req, res) {
           } else {
             res.json({ERROR: "Please enter a valid url or create new short url.",
                       HELP : "Please visit the homepage for more information about how to create short url.",
-                      HOME_PAGE : "https://urlshortenerms-gurkarn98.glitch.me/" })
+                      HOME_PAGE : "https://usms.glitch.me/" })
           }
         })
     })
